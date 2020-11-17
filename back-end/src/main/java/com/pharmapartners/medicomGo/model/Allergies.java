@@ -10,13 +10,12 @@ public class Allergies {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int allergyID;
 
-    @ManyToOne(targetEntity = Patient.class)
-    @JoinColumn(name="patientID")
-    private Patient patient;
+
+    private int patientID;
     private String allergyName;
     private String allergyDescription;
 
-
+    public Allergies(){}
 
     public int getAllergyID() {
         return allergyID;
@@ -24,6 +23,10 @@ public class Allergies {
 
     public String getAllergyDescription() {
         return allergyDescription;
+    }
+
+    public int getPatientID() {
+        return patientID;
     }
 
     public String getAllergyName() {
@@ -36,6 +39,7 @@ public class Allergies {
     public void setAllergyDescription(String allergyDescription) {
         this.allergyDescription = allergyDescription;
     }
+
 
     @Override
     public boolean equals(Object o) {

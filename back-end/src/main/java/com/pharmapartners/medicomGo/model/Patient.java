@@ -18,9 +18,6 @@ public class Patient {
     private String contact;
     private String emergencyContact;
 
-    @OneToMany(mappedBy = "patient",fetch = FetchType.LAZY)
-    private List<Allergies> allergies;
-
     public Patient(){}
     public Patient(String firstName,String lastName,int age,String address, String contact, String emergencyContact){
         this.firstName=firstName;
@@ -59,9 +56,6 @@ public class Patient {
         return emergencyContact;
     }
 
-    public List<Allergies> getAllergies() {
-        return allergies;
-    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -107,7 +101,6 @@ public class Patient {
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
                 ", emergencyContact='" + emergencyContact + '\'' +
-                ", allergies=" + allergies +
                 '}';
     }
 }

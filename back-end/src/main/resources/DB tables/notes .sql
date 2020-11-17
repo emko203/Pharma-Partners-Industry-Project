@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2020 at 09:35 PM
+-- Generation Time: Nov 17, 2020 at 11:02 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -25,13 +25,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `previousdiseases`
+-- Table structure for table `notes`
 --
 
-CREATE TABLE `previousdiseases` (
-  `patientID` int(11) NOT NULL,
-  `disease` varchar(150) NOT NULL
+CREATE TABLE `notes` (
+  `notesID` int(11) NOT NULL,
+  `notes_Content` longtext NOT NULL,
+  `patientID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`notesID`, `notes_Content`, `patientID`) VALUES
+(1, 'Patient is okay, TOTAL ORGAN FAILURE SPOTTED', 1),
+(2, 'test notes 2', 2),
+(3, 'Testing', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`notesID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `notesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
