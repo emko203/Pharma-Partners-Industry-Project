@@ -14,6 +14,7 @@ import { PatientComponent } from './patient/patient.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientFormComponent } from './form/patient-form/patient-form.component';
 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { PatientFormComponent } from './form/patient-form/patient-form.component
     FormsModule ,
     ReactiveFormsModule,
     AccordionModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: LoginComponent},
       {path: 'dashboard', component: DashboardComponent},

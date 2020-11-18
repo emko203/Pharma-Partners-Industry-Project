@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../model/patient';
 import { PatientServiceService } from '../service/patient-service.service';
+import { Observable} from 'rxjs';
 
 @Component({
   selector: 'app-patient-list',
