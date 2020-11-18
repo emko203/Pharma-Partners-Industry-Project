@@ -33,7 +33,8 @@ import { PatientFormComponent } from './form/patient-form/patient-form.component
       {path: '', component: LoginComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'patient', component: PatientPageComponent},
-      {path: 'patient/{name}', component: PatientPageComponent}
+      {path: 'patient/{name}', component: PatientPageComponent},
+      {path: 'patients', component: PatientListComponent}
     ]),
 
   ],
