@@ -11,6 +11,8 @@ import { AccordionModule } from './accordion/accordion.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
+import { MedicinePrescriptionComponent } from './medicine-prescription/medicine-prescription.component';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PatientComponent } from './patient/patient.component';
     DashboardComponent,
     PatientPageComponent,
     LoginComponent,
-    PatientComponent
+    PatientComponent,
+    MedicinePrescriptionComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
