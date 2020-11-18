@@ -11,6 +11,8 @@ import { AccordionModule } from './accordion/accordion.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
+import { PatientFormComponent } from './form/patient-form/patient-form.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,14 @@ import { PatientComponent } from './patient/patient.component';
     DashboardComponent,
     PatientPageComponent,
     LoginComponent,
-    PatientComponent
+    PatientComponent,
+    PatientListComponent,
+    PatientFormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule ,
+    ReactiveFormsModule,
     AccordionModule,
     RouterModule.forRoot([
       {path: '', component: LoginComponent},
