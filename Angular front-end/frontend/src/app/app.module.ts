@@ -11,6 +11,11 @@ import { AccordionModule } from './accordion/accordion.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
+import { AllergiesComponent } from './allergies/allergies.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { AllergiesFormComponent } from './Forms/allergies-form/allergies-form.component';
+import { AppointmentsFormComponent } from './Forms/appointments-form/appointments-form.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,19 +23,29 @@ import { PatientComponent } from './patient/patient.component';
     DashboardComponent,
     PatientPageComponent,
     LoginComponent,
-    PatientComponent
+    PatientComponent,
+    AllergiesComponent,
+    AllergiesFormComponent,
+    AppointmentsComponent,
+    AppointmentsFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AccordionModule,
-    RouterModule.forRoot([
-      {path: '', component: LoginComponent},
-      {path: 'dashboard', component: DashboardComponent},
-      {path: 'patient', component: PatientPageComponent},
-      {path: 'patient/{name}', component: PatientPageComponent}
-    ]),
+    imports: [
+        BrowserModule,
+        AccordionModule,
+        HttpClientModule,
+        RouterModule.forRoot([
+            {path: '', component: LoginComponent},
+            {path: 'dashboard', component: DashboardComponent},
+            {path: 'patient', component: PatientPageComponent},
+            {path: 'patient/{name}', component: PatientPageComponent},
+            {path: 'allergies', component: AllergiesComponent},
+            {path: 'addallergies', component: AllergiesFormComponent},
+            {path: 'appointments', component: AppointmentsComponent},
+            {path: 'addappointments', component: AppointmentsFormComponent}
+        ]),
+        FormsModule,
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
