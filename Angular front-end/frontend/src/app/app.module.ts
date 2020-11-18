@@ -40,6 +40,7 @@ import {HttpClientModule} from '@angular/common/http';
     PatientFormComponent,
     LabResultsListComponent,
     VaccineListComponent
+    DiseasesListComponent
   ],
 
    
