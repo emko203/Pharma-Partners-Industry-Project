@@ -11,6 +11,8 @@ import { AccordionModule } from './accordion/accordion.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
+import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientFormComponent } from './form/patient-form/patient-form.component';
