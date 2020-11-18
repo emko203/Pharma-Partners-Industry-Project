@@ -1,0 +1,27 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Patient ID</th>
+          <th scope="col">Description</th>
+          <th scope="col">Lab Name</th>
+          <th scope="col">Date Taken</th>
+          <th scope="col">Date Ready</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let labResult of labResults">
+          <td>{{ labResult.labResultID }}</td>
+          <td>{{ labResult.patientID }}</td>
+          <td>{{ labResult.resultDescription }}</td>
+          <td>{{ labResult.labName }}</td>
+          <td>{{ labResult.dateTaken }}</td>
+          <td>{{ labResult.dateReady }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
