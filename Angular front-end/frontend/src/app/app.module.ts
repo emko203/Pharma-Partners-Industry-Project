@@ -11,6 +11,8 @@ import { AccordionModule } from './accordion/accordion.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
+import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -18,16 +20,20 @@ import { PatientComponent } from './patient/patient.component';
     DashboardComponent,
     PatientPageComponent,
     LoginComponent,
-    PatientComponent
+    PatientComponent,
+    LabResultsListComponent
   ],
   imports: [
     BrowserModule,
     AccordionModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: LoginComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'patient', component: PatientPageComponent},
-      {path: 'patient/{name}', component: PatientPageComponent}
+      {path: 'patient/{name}', component: PatientPageComponent},
+      {path: 'labResults', component: LabResultsListComponent}
+
     ]),
 
   ],
