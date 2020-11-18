@@ -15,6 +15,7 @@ import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientFormComponent } from './form/patient-form/patient-form.component';
 import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DiseasesListComponent } from './diseases-list/diseases-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     PatientComponent,
     PatientListComponent,
     PatientFormComponent,
-    LabResultsListComponent
+    LabResultsListComponent,
+    DiseasesListComponent
   ],
   imports: [
     BrowserModule,
