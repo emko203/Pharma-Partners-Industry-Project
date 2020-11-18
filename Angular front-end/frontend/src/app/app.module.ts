@@ -15,6 +15,7 @@ import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientFormComponent } from './form/patient-form/patient-form.component';
 import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     PatientComponent,
     PatientListComponent,
     PatientFormComponent,
-    LabResultsListComponent
+    LabResultsListComponent,
+    VaccineListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'patient', component: PatientPageComponent},
       {path: 'patient/{name}', component: PatientPageComponent},
       {path: 'patients', component: PatientListComponent},
-      {path: 'labResults', component: LabResultsListComponent}
+      {path: 'labResults', component: LabResultsListComponent},
+      {path: 'vaccine/{id}', component: VaccineListComponent}
 
     ]),
 
