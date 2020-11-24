@@ -39,7 +39,8 @@ import { DiseasesListComponent } from './diseases-list/diseases-list.component';
     DiseasesListComponent,
     PatientFormComponent,
     LabResultsListComponent,
-    AllergiesComponent
+    AllergiesComponent,
+    VaccineListComponent
   ],
     imports: [
         BrowserModule,
