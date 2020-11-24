@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';  
 import { Observable } from 'rxjs';  
+import { Medicineprescription } from '../models/medicineprescription';
 @Injectable({
   providedIn: 'root'
 })
 export class MedicinePrescriptionService {
-  private medicineUrl = 'http://localhost:8080/prescription/';  
+  private medicineUrl = 'http://localhost:8080/prescription/1';  
+  private medicineUrl1 = 'http://localhost:8080/prescription/all/1';  
   constructor(private http:HttpClient) { }
-  getAllMedicinePrescriptions(prescriptionid:number):Observable<any>{
-    return this.http.get(`${this.medicineUrl}/${prescriptionid}`);
+  getAllMedicinePrescriptions():Observable<Medicineprescription[]>{
+    return this.http.get<Medicineprescription[]>(`${this.medicineUrl}`);
   }
-  getMedicinePrescriptionsperPatient(patientid:number):Observable<any>{
-    return this.http.get(`${this.medicineUrl}/all/${patientid}`);
+  getMedicinePrescriptionsperPatient():Observable<Medicineprescription[]>{
+    return this.http.get<Medicineprescription[]>(`${this.medicineUrl1}`);
   }
 }

@@ -18,6 +18,11 @@
 
     <app-accordion-item title="Medicine Prescription: ">
       Placeholder information:
+      <li *ngFor="let medicineprescription of medicineprescriptions">
+        <a href="" class="btn btn-sm btn-primary mr-1">  {{medicineprescription.patientID}} - {{medicineprescription.prescriptionID}} - {{medicineprescription.prescription}}</a>
+        <br>
+        <br>
+    </li>
     </app-accordion-item>
 
     <app-accordion-item title="Alergie Information: ">
@@ -43,8 +48,8 @@
 
     <app-accordion-item title="Notes: ">
       Placeholder information:
-      <li *ngFor="let openepisode of openepisodes">
-        <a href="" class="btn btn-sm btn-primary mr-1">  {{openepisode.patientID}} - {{openepisode.notes}}</a>
+      <li *ngFor="let note of notes">
+        <a href="" class="btn btn-sm btn-primary mr-1">  {{note.patientID}} - {{note.notesID}} - {{note.notesContent}}</a>
         <br>
         <br>
     </li>
