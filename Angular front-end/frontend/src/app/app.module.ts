@@ -12,18 +12,18 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
 import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientFormComponent } from './form/patient-form/patient-form.component';
-import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
 import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
 
 import { AllergiesComponent } from './allergies/allergies.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { AllergiesFormComponent } from './Forms/allergies-form/allergies-form.component';
 import { AppointmentsFormComponent } from './Forms/appointments-form/appointments-form.component';
-import {HttpClientModule} from '@angular/common/http';
+import { DiseasesListComponent } from './diseases-list/diseases-list.component';
+
 
 
 @NgModule({
@@ -39,12 +39,12 @@ import {HttpClientModule} from '@angular/common/http';
     AppointmentsFormComponent,
     PatientFormComponent,
     LabResultsListComponent,
-    VaccineListComponent
-    DiseasesListComponent
+    VaccineListComponent,
+    DiseasesListComponent,
   ],
 
-   
-  
+
+
     imports: [
         BrowserModule,
         FormsModule ,
@@ -66,7 +66,7 @@ import {HttpClientModule} from '@angular/common/http';
             {path: 'vaccine/{id}', component: VaccineListComponent}
         ]),
         FormsModule,
-        
+
     ],
   providers: [],
   bootstrap: [AppComponent]
