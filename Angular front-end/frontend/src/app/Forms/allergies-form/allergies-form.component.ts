@@ -3,6 +3,7 @@ import {Allergies} from "../../Service_Class/allergies";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AllergiesService} from '../../Service_Class/allergies.service';
 
+
 @Component({
   selector: 'app-allergies-form',
   templateUrl: './allergies-form.component.html',

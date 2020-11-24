@@ -10,7 +10,7 @@ export class DiseasesService {
   private usersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/diseases/all/{id}';
+    this.usersUrl = 'http://localhost:8080/diseases/all/1';
    }
 
    public findAll(): Observable<Diseases[]> {

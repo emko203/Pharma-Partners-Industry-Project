@@ -51,7 +51,6 @@ import { DiseasesListComponent } from './diseases-list/diseases-list.component';
             {path: '', component: LoginComponent},
             {path: 'dashboard', component: DashboardComponent},
             {path: 'patient', component: PatientPageComponent},
-            {path: 'patient/{name}', component: PatientPageComponent},
             {path: 'allergies', component: AllergiesComponent},
             {path: 'addallergies', component: AllergiesFormComponent},
             {path: 'appointments', component: AppointmentsComponent},
@@ -61,7 +60,6 @@ import { DiseasesListComponent } from './diseases-list/diseases-list.component';
             {path: 'labResults', component: LabResultsListComponent},
             {path: 'vaccine/{id}', component: VaccineListComponent}
         ]),
-        FormsModule,
 
     ],
   providers: [],
