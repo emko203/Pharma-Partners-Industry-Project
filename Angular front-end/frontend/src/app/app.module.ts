@@ -14,7 +14,6 @@ import { PatientComponent } from './patient/patient.component';
 import { MedicinePrescriptionComponent } from './medicine-prescription/medicine-prescription.component';
 import { NotesComponent } from './notes/notes.component';
 import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
-import { HttpClientModule } from '@angular/common/http';
 
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientFormComponent } from './form/patient-form/patient-form.component';
@@ -38,28 +37,6 @@ import { DiseasesListComponent } from './diseases-list/diseases-list.component';
     MedicinePrescriptionComponent,
     NotesComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AccordionModule,
-    RouterModule.forRoot([
-      {path: '', component: LoginComponent},
-      {path: 'dashboard', component: DashboardComponent},
-      {path: 'patient', component: PatientPageComponent},
-      {path: 'patient/{name}', component: PatientPageComponent}
-    ]),
-    AllergiesComponent,
-    AllergiesFormComponent,
-    AppointmentsComponent,
-    AppointmentsFormComponent,
-    PatientFormComponent,
-    LabResultsListComponent,
-    VaccineListComponent,
-    DiseasesListComponent,
-  ],
-
-
-
     imports: [
         BrowserModule,
         FormsModule ,
