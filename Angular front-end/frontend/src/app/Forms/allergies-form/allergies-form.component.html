@@ -1,0 +1,49 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #allergiesForm="ngForm">
+      <div class="form-group">
+        <label for="allergyID">AllergyID</label>
+        <input type="text" [(ngModel)]="allergies.allergyID"
+               class="form-control"
+               id="allergyID"
+               name="allergyID"
+               placeholder="Enter allergyID"
+               required #allergyID="ngModel">
+      </div>
+      <div [hidden]="!allergyID.pristine" class="alert alert-danger">allergyID is required</div>
+      <div class="form-group">
+        <label for="patientID">PatientID</label>
+        <input type="text" [(ngModel)]="allergies.patientID"
+               class="form-control"
+               id="patientID"
+               name="patientID"
+               placeholder="Enter patientID"
+               required #patientID="ngModel">
+      </div>
+      <div [hidden]="!patientID.pristine" class="alert alert-danger">patientID is required</div>
+      <div class="form-group">
+        <label for="allergy_Name">Allergy_Name</label>
+        <input type="text" [(ngModel)]="allergies.allergyName"
+               class="form-control"
+               id="allergy_Name"
+               name="allergy_Name"
+               placeholder="Enter allergy_Name"
+               required #allergy_Name="ngModel">
+      </div>
+      <div [hidden]="!allergy_Name.pristine" class="alert alert-danger">allergy_Name is required</div>
+      <div class="form-group">
+        <label for="allergy_Description">Allergy_Description</label>
+        <input type="text" [(ngModel)]="allergies.allergyDescription"
+               class="form-control"
+               id="allergy_Description"
+               name="allergy_Description"
+               placeholder="Enter allergy_Description"
+               required #allergy_Description="ngModel">
+      </div>
+      <div [hidden]="!allergy_Description.pristine" class="alert alert-danger">allergy_Description is required</div>
+      <button type="submit" [disabled]="!allergiesForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
+

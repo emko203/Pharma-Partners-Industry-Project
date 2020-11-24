@@ -1,0 +1,48 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #appointmentsForm="ngForm">
+      <div class="form-group">
+        <label for="appointmentID">AppointmentID</label>
+        <input type="text" [(ngModel)]="appointments.appointmentID"
+               class="form-control"
+               id="appointmentID"
+               name="appointmentID"
+               placeholder="Enter appointmentID"
+               required #appointmentID="ngModel">
+      </div>
+      <div [hidden]="!appointmentID.pristine" class="alert alert-danger">appointmentID is required</div>
+      <div class="form-group">
+        <label for="patientID">PatientID</label>
+        <input type="text" [(ngModel)]="appointments.patientID"
+               class="form-control"
+               id="patientID"
+               name="patientID"
+               placeholder="Enter patientID"
+               required #patientID="ngModel">
+      </div>
+      <div [hidden]="!patientID.pristine" class="alert alert-danger">patientID is required</div>
+      <div class="form-group">
+        <label for="appointment_Date">Appointment_Date</label>
+        <input type="text" [(ngModel)]="appointments.appointment_Date"
+               class="form-control"
+               id="appointment_Date"
+               name="appointment_Date"
+               placeholder="Enter appointment_Date"
+               required #appointment_Date="ngModel">
+      </div>
+      <div [hidden]="!appointment_Date.pristine" class="alert alert-danger">Appointment_Date is required</div>
+      <div class="form-group">
+        <label for="notesID">NotesID</label>
+        <input type="text" [(ngModel)]="appointments.notesID"
+               class="form-control"
+               id="notesID"
+               name="notesID"
+               placeholder="Enter notesID"
+               required #notesID="ngModel">
+      </div>
+      <div [hidden]="!notesID.pristine" class="alert alert-danger">NotesID is required</div>
+      <button type="submit" [disabled]="!appointmentsForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

@@ -11,11 +11,19 @@ import { AccordionModule } from './accordion/accordion.module';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
+<<<<<<< HEAD
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientFormComponent } from './form/patient-form/patient-form.component';
 import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
+=======
+import { AllergiesComponent } from './allergies/allergies.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { AllergiesFormComponent } from './Forms/allergies-form/allergies-form.component';
+import { AppointmentsFormComponent } from './Forms/appointments-form/appointments-form.component';
+import {HttpClientModule} from '@angular/common/http';
+>>>>>>> wondimu
 
 @NgModule({
   declarations: [
@@ -24,6 +32,7 @@ import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
     PatientPageComponent,
     LoginComponent,
     PatientComponent,
+<<<<<<< HEAD
     PatientListComponent,
     PatientFormComponent,
     LabResultsListComponent,
@@ -45,8 +54,30 @@ import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
       {path: 'vaccine/{id}', component: VaccineListComponent}
 
     ]),
-
+=======
+    AllergiesComponent,
+    AllergiesFormComponent,
+    AppointmentsComponent,
+    AppointmentsFormComponent
   ],
+    imports: [
+        BrowserModule,
+        AccordionModule,
+        HttpClientModule,
+        RouterModule.forRoot([
+            {path: '', component: LoginComponent},
+            {path: 'dashboard', component: DashboardComponent},
+            {path: 'patient', component: PatientPageComponent},
+            {path: 'patient/{name}', component: PatientPageComponent},
+            {path: 'allergies', component: AllergiesComponent},
+            {path: 'addallergies', component: AllergiesFormComponent},
+            {path: 'appointments', component: AppointmentsComponent},
+            {path: 'addappointments', component: AppointmentsFormComponent}
+        ]),
+        FormsModule,
+>>>>>>> wondimu
+
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
