@@ -23,7 +23,7 @@
       <div [hidden]="!patientID.pristine" class="alert alert-danger">patientID is required</div>
       <div class="form-group">
         <label for="allergy_Name">Allergy_Name</label>
-        <input type="text" [(ngModel)]="allergies.allergy_Name"
+        <input type="text" [(ngModel)]="allergies.allergyName"
                class="form-control"
                id="allergy_Name"
                name="allergy_Name"
@@ -33,7 +33,7 @@
       <div [hidden]="!allergy_Name.pristine" class="alert alert-danger">allergy_Name is required</div>
       <div class="form-group">
         <label for="allergy_Description">Allergy_Description</label>
-        <input type="text" [(ngModel)]="allergies.allergy_Description"
+        <input type="text" [(ngModel)]="allergies.allergyDescription"
                class="form-control"
                id="allergy_Description"
                name="allergy_Description"

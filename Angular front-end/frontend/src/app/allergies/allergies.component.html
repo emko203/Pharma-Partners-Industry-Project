@@ -7,8 +7,8 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">patientID</th>
-        <th scope="col">allergy_Name</th>
-        <th scope="col">allergy_Description</th>
+        <th scope="col">allergy Name</th>
+        <th scope="col">allergy Description</th>
       </tr>
 
       </thead>
@@ -16,8 +16,8 @@
       <tr *ngFor="let allergie of allergies">
         <td>{{ allergie.allergyID }}</td>
         <td>{{ allergie.patientID }}</td>
-        <td>{{ allergie.allergy_Name }}</td>
-        <td>{{ allergie.allergy_Description }}</td>
+        <td>{{ allergie.allergyName}}</td>
+        <td>{{ allergie.allergyDescription }}</td>
       </tr>
       </tbody>
     </table>

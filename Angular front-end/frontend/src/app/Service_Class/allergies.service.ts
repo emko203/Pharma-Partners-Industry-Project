@@ -11,7 +11,7 @@ export class AllergiesService {
   private allergiesUrl: string;
 
   constructor(private http: HttpClient) {
-    this.allergiesUrl = 'http://localhost:8080/allergies';
+    this.allergiesUrl = 'http://localhost:8080/allergies/1';
   }
 
   public findAll(): Observable<Allergies[]> {
