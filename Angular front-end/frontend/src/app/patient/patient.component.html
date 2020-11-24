@@ -14,9 +14,8 @@
     </app-accordion-item>
 
     <app-accordion-item title="Medicine Prescription: ">
-      <li *ngFor="let medicineprescription of medicineprescriptions">
-        <a href="" class="btn btn-sm btn-primary mr-1">  {{medicineprescription.patientID}} - {{medicineprescription.prescriptionID}} - {{medicineprescription.prescription}}</a>
-    </li>
+      <app-medicine-prescription></app-medicine-prescription>
+
     </app-accordion-item>
     <app-accordion-item title="Alergie Information: ">
       <app-allergies></app-allergies>
@@ -34,9 +33,7 @@
     </app-accordion-item>
 
     <app-accordion-item title="Notes: ">
-      <li *ngFor="let note of notes">
-        <a href="" class="btn btn-sm btn-primary mr-1">  {{note.patientID}} - {{note.notesID}} - {{note.notesContent}}</a>
-    </li>
+     <app-notes></app-notes>
     </app-accordion-item>
   </app-accordion>
 </div>
