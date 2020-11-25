@@ -3,8 +3,6 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">patientID</th>
           <th scope="col">vaccineName</th>
           <th scope="col">vaccineDescription</th>
           <th scope="col">initialDate</th>
@@ -13,8 +11,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let vaccine of vaccines">
-          <td>{{ vaccine.vaccineID }}</td>
-          <td>{{ vaccine.patientID }}</td>
           <td>{{ vaccine.vaccineName}}</td>
           <td>{{ vaccine.vaccineDescription }}</td>
           <td>{{ vaccine.initialDate}}</td>
