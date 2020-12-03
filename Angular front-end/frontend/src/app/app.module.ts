@@ -5,14 +5,13 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PatientPageComponent } from './patient-page/patient-page.component';
 import { AccordionModule } from './accordion/accordion.module';
 
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
-import { MedicinePrescriptionComponent } from './medicine-prescription/medicine-prescription.component';
-import { NotesComponent } from './notes/notes.component';
+
+
 import { LabResultsListComponent } from './lab-results-list/lab-results-list.component';
 
 import { PatientListComponent } from './patient-list/patient-list.component';
@@ -21,9 +20,11 @@ import { VaccineListComponent } from './vaccine-list/vaccine-list.component';
 
 import { AllergiesComponent } from './allergies/allergies.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
-import { AllergiesFormComponent } from './Forms/allergies-form/allergies-form.component';
-import { AppointmentsFormComponent } from './Forms/appointments-form/appointments-form.component';
 import { DiseasesListComponent } from './diseases-list/diseases-list.component';
+import { AllergiesFormComponent } from './form/allergies-form/allergies-form.component';
+import { AppointmentsFormComponent} from './form/appointments-form/appointments-form.component';
+import {NotesComponent} from './notes/notes.component';
+import {MedicinePrescriptionComponent} from './medicine-prescription/medicine-prescription.component';
 
 
 
@@ -31,7 +32,6 @@ import { DiseasesListComponent } from './diseases-list/diseases-list.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    PatientPageComponent,
     LoginComponent,
     PatientComponent,
     MedicinePrescriptionComponent,
@@ -40,7 +40,10 @@ import { DiseasesListComponent } from './diseases-list/diseases-list.component';
     PatientFormComponent,
     LabResultsListComponent,
     AllergiesComponent,
-    VaccineListComponent
+    VaccineListComponent,
+    AllergiesFormComponent,
+    AppointmentsFormComponent,
+    AppointmentsComponent
   ],
     imports: [
         BrowserModule,
@@ -51,12 +54,12 @@ import { DiseasesListComponent } from './diseases-list/diseases-list.component';
         RouterModule.forRoot([
             {path: '', component: LoginComponent},
             {path: 'dashboard', component: DashboardComponent},
-            {path: 'patient', component: PatientPageComponent},
+            {path: 'patient', component: PatientComponent},
             {path: 'allergies', component: AllergiesComponent},
             {path: 'addallergies', component: AllergiesFormComponent},
             {path: 'appointments', component: AppointmentsComponent},
             {path: 'addappointments', component: AppointmentsFormComponent},
-            {path: 'patient/{name}', component: PatientPageComponent},
+            {path: 'patient/{name}', component: PatientComponent},
             {path: 'patients', component: PatientListComponent},
             {path: 'labResults', component: LabResultsListComponent},
             {path: 'vaccine/{id}', component: VaccineListComponent}

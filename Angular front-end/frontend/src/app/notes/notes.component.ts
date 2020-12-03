@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl,FormGroup,Validators} from '@angular/forms';
-import { Notes } from '../models/notes';
+
 import { NotesService } from '../service/notes.service';
 import { first } from 'rxjs/operators';
+import {Notes} from '../model/notes';
 
 @Component({
   selector: 'app-notes',

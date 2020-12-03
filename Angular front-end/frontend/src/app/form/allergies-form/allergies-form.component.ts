@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {Allergies} from "../../Service_Class/allergies";
-import {ActivatedRoute, Router} from "@angular/router";
-import {AllergiesService} from '../../Service_Class/allergies.service';
-
+import {ActivatedRoute, Router} from '@angular/router';
+import {Allergies} from '../../model/allergies';
+import {AllergiesService} from '../../service/allergies.service';
 
 @Component({
   selector: 'app-allergies-form',
   templateUrl: './allergies-form.component.html',
   styleUrls: ['./allergies-form.component.css']
 })
-export class AllergiesFormComponent  {
+export class AllergiesFormComponent implements OnInit {
 
   allergies: Allergies;
 
-    constructor(
+  constructor(
     private route: ActivatedRoute,
     private router: Router,
     private allergiesService: AllergiesService) {
@@ -26,6 +25,9 @@ export class AllergiesFormComponent  {
 
   gotoAllergiesList() {
     this.router.navigate(['/allergies']);
+  }
+
+  ngOnInit(): void {
   }
 
 }
