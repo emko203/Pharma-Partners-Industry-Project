@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Allergies} from '../Service_Class/allergies';
-import {AllergiesService} from '../Service_Class/allergies.service';
+import {Allergies} from '../model/allergies';
+import {AllergiesService} from '../service/allergies.service';
+
 
 @Component({
   selector: 'app-allergies',

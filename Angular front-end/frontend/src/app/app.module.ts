@@ -5,23 +5,20 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PatientPageComponent } from './patient-page/patient-page.component';
 import { AccordionModule } from './accordion/accordion.module';
-
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PatientComponent } from './patient/patient.component';
 import { AllergiesComponent } from './allergies/allergies.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
-import { AllergiesFormComponent } from './Forms/allergies-form/allergies-form.component';
-import { AppointmentsFormComponent } from './Forms/appointments-form/appointments-form.component';
 import {HttpClientModule} from '@angular/common/http';
+import {AllergiesFormComponent} from './form/allergies-form/allergies-form.component';
+import {AppointmentsFormComponent} from './form/appointments-form/appointments-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    PatientPageComponent,
     LoginComponent,
     PatientComponent,
     AllergiesComponent,
@@ -36,8 +33,8 @@ import {HttpClientModule} from '@angular/common/http';
         RouterModule.forRoot([
             {path: '', component: LoginComponent},
             {path: 'dashboard', component: DashboardComponent},
-            {path: 'patient', component: PatientPageComponent},
-            {path: 'patient/{name}', component: PatientPageComponent},
+            {path: 'patient', component: PatientComponent},
+            {path: 'patient/{name}', component: PatientComponent},
             {path: 'allergies', component: AllergiesComponent},
             {path: 'addallergies', component: AllergiesFormComponent},
             {path: 'appointments', component: AppointmentsComponent},
