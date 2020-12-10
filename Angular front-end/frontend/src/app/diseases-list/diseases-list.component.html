@@ -3,20 +3,16 @@
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Patient ID</th>
             <th scope="col">Disease</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let disease of diseases">
-            <td>{{ disease.diseaseID }}</td>
-            <td>{{ disease.PatientID }}</td>
+
             <td>{{ disease.disease }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  
-  
+

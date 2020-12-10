@@ -1,0 +1,16 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Notes Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let note of notes">
+          <td>{{note.notesContent}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
