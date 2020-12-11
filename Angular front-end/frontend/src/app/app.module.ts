@@ -25,6 +25,7 @@ import { AllergiesFormComponent } from './form/allergies-form/allergies-form.com
 import { AppointmentsFormComponent} from './form/appointments-form/appointments-form.component';
 import {NotesComponent} from './notes/notes.component';
 import {MedicinePrescriptionComponent} from './medicine-prescription/medicine-prescription.component';
+import { GeneralInformationComponent } from './general-information/general-information.component';
 
 
 
@@ -43,7 +44,8 @@ import {MedicinePrescriptionComponent} from './medicine-prescription/medicine-pr
     VaccineListComponent,
     AllergiesFormComponent,
     AppointmentsFormComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    GeneralInformationComponent
   ],
     imports: [
         BrowserModule,
@@ -62,7 +64,8 @@ import {MedicinePrescriptionComponent} from './medicine-prescription/medicine-pr
             {path: 'patient/{name}', component: PatientComponent},
             {path: 'patients', component: PatientListComponent},
             {path: 'labResults', component: LabResultsListComponent},
-            {path: 'vaccine/{id}', component: VaccineListComponent}
+            {path: 'vaccine/{id}', component: VaccineListComponent},
+            {path: 'patients/{id}', component: GeneralInformationComponent}
         ]),
 
     ],

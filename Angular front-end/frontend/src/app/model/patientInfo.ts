@@ -1,4 +1,4 @@
-export class Patient {
+export class PatientInfo {
   patientID: string;
   firstName: string;
   lastName: string;
