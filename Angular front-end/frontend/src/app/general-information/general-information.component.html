@@ -14,18 +14,16 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let patient of patients">
-        <td>{{ patient.patientID }}</td>
-        <td>{{ patient.firstName }}</td>
-        <td>{{ patient.lastName }}</td>
-        <td>{{ patient.age }}</td>
-        <td>{{ patient.address}}</td>
-        <td>{{ patient.contact}}</td>
-        <td>{{ patient.emergencyContact}}</td>
+      <tr>
+        <td>{{ patient?.patientID }}</td>
+        <td>{{ patient?.firstName }}</td>
+        <td>{{ patient?.lastName }}</td>
+        <td>{{ patient?.age }}</td>
+        <td>{{ patient?.address}}</td>
+        <td>{{ patient?.contact}}</td>
+        <td>{{ patient?.emergencyContact}}</td>
 
-<!--        <td class="row-table"> <button class="btn btn-light btn-outline-dark" data-toggle="modal" data-target="departmentDetail"-->
-<!--                                       [class.selected]="patient === patientInfo"-->
-<!--                                       (click)="getPatient(patient.id)"> ++ </button>-->
+
       </tr>
       </tbody>
     </table>

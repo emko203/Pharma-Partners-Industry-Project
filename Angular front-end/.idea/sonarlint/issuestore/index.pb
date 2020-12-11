@@ -63,3 +63,7 @@ w
 Gfrontend/src/app/general-information/general-information.component.html,b\2\b25c863939df9b824b558eb18dc83fb610392523
 g
 7frontend/src/app/service/general-information.service.ts,5\8\58e08eecafa39093e4f47e2d4cc62ae29d9a3bb0
+`
+0frontend/src/app/service/appointments.service.ts,d\6\d6a0c183654adf6d79c793a50ea2a704b1888162
+S
+#frontend/src/app/app.module.ts.orig,2\4\249d282aa1033f451ee83172411b520a19efe51c

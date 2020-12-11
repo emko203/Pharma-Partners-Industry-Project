@@ -3,6 +3,7 @@ import {GeneralInformationService} from '../service/general-information.service'
 import {ActivatedRoute, Router} from '@angular/router';
 import {Patient} from '../model/patient';
 
+
 @Component({
   selector: 'app-general-information',
   templateUrl: './general-information.component.html',
@@ -10,26 +11,16 @@ import {Patient} from '../model/patient';
 })
 export class GeneralInformationComponent implements OnInit {
 
-  patientInfo: Patient;
-  patients: any;
+  patient: Patient;
   constructor(private generalService: GeneralInformationService, private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit(): void {
-    // this.getPatient(this.route.snapshot.paramMap.get('id'));
-    this.generalService.findAll().subscribe(data => {
-      this.patients = data;
+
+    this.generalService.findAll().subscribe((response: Patient) => {
+      this.patient = response;
+      this.patient = response;
   });
   }
-  getPatient(id): void {
-    this.generalService.get(id)
-      .subscribe(
-        data => {
-          this.patientInfo = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
+
 }
