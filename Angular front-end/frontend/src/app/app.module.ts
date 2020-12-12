@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -25,6 +25,7 @@ import { AllergiesFormComponent } from './form/allergies-form/allergies-form.com
 import { AppointmentsFormComponent} from './form/appointments-form/appointments-form.component';
 import {NotesComponent} from './notes/notes.component';
 import {MedicinePrescriptionComponent} from './medicine-prescription/medicine-prescription.component';
+import { AuthInterceptor } from './service/auth-interceptor';
 
 
 
@@ -66,7 +67,9 @@ import {MedicinePrescriptionComponent} from './medicine-prescription/medicine-pr
         ]),
 
     ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true},
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
