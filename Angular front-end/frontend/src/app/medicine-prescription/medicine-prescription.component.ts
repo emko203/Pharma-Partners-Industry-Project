@@ -14,7 +14,7 @@ export class MedicinePrescriptionComponent implements OnInit {
   constructor(private medicineService: MedicinePrescriptionService) { }
 
   ngOnInit(): void {
-    this.medicineService.getAllMedicinePrescriptions().pipe(first()).subscribe(data => {
+    this.medicineService.getAllMedicinePrescriptions(null).pipe(first()).subscribe(data => {
       this.medicineprescriptions = data;
   });
   this.medicineService. getMedicinePrescriptionsperPatient().pipe(first()).subscribe(data => {

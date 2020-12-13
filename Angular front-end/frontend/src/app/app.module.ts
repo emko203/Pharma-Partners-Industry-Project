@@ -56,7 +56,7 @@ import { GeneralInformationComponent } from './general-information/general-infor
         RouterModule.forRoot([
             {path: '', component: LoginComponent},
             {path: 'dashboard', component: DashboardComponent},
-            {path: 'patient', component: PatientComponent},
+            {path: 'patient/:id', component: PatientComponent},
             {path: 'allergies', component: AllergiesComponent},
             {path: 'addallergies', component: AllergiesFormComponent},
             {path: 'appointments', component: AppointmentsComponent},

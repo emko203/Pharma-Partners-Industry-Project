@@ -19,7 +19,6 @@ export class GeneralInformationComponent implements OnInit {
 
     this.generalService.findAll().subscribe((response: Patient) => {
       this.patient = response;
-      this.patient = response;
   });
   }
 
