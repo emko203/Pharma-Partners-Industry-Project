@@ -3,8 +3,7 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Patient ID</th>
+
           <th scope="col">Description</th>
           <th scope="col">Lab Name</th>
           <th scope="col">Date Taken</th>
@@ -13,8 +12,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let labResult of labResults">
-          <td>{{ labResult.labResultID }}</td>
-          <td>{{ labResult.patientID }}</td>
           <td>{{ labResult.resultDescription }}</td>
           <td>{{ labResult.labName }}</td>
           <td>{{ labResult.dateTaken }}</td>

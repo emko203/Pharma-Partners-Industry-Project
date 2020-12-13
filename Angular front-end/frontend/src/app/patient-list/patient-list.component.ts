@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Patient } from '../model/patient';
 import { PatientServiceService } from '../service/patient-service.service';
 import { Observable} from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-patient-list',
@@ -17,7 +18,7 @@ export class PatientListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.patientService.findAll().subscribe(data => {
+    this.patientService.findAll().pipe(first()).subscribe(data => {
       this.patients = data;
     });
   }

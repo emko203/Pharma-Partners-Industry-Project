@@ -16,7 +16,7 @@ export class LabResultsListComponent implements OnInit {
   ngOnInit() {
     this.labResultsService.findAll().subscribe(data => {
       this.labResults = data;
-    })
+    });
   }
 
 }

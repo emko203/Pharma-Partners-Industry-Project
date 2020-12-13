@@ -11,7 +11,7 @@ export class VaccineServiceService {
   private vaccineUrl: string;
 
   constructor(private http: HttpClient) {
-    this.vaccineUrl = 'http://localhost:8080/vaccine/all/{id}';
+    this.vaccineUrl = 'http://localhost:8080/vaccine/all/1';
    }
 
    public findAll(): Observable<Vaccine[]> {
