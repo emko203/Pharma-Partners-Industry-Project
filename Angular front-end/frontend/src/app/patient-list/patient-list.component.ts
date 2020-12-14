@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../model/patient';
 import { PatientServiceService } from '../service/patient-service.service';
-import { Observable} from 'rxjs';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -12,14 +11,13 @@ import { first } from 'rxjs/operators';
 export class PatientListComponent implements OnInit {
 
   patients: Patient[];
+  patient = new Patient();
 
-  constructor(private patientService: PatientServiceService) {
-
-  }
+  constructor(private patientService: PatientServiceService) {}
 
   ngOnInit() {
-    this.patientService.findAll().pipe(first()).subscribe(data => {
+    this.patientService.getAllPatients(null).pipe(first()).subscribe(data => {
       this.patients = data;
-    });
+  });
   }
 }

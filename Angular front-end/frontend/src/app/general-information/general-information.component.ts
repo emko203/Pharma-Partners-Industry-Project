@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GeneralInformationService} from '../service/general-information.service';
-import {Patient} from '../model/patient';
+import { PatientInfo } from '../model/patientInfo';
 import { first } from 'rxjs/operators';
 
 
@@ -10,17 +10,15 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./general-information.component.css']
 })
 export class GeneralInformationComponent implements OnInit {
-  patients:Patient[];
-  patient =new Patient();
-  constructor(private generalService: GeneralInformationService) { }
+  patients: PatientInfo[];
+  patient = new PatientInfo();
 
-  ngOnInit(): void {
-    this.generalService.getAllPatients(null).pipe(first()).subscribe(data => {
+  constructor(private generalInformationService: GeneralInformationService) {}
+
+  ngOnInit() {
+    this.generalInformationService.getAllPatients(null).pipe(first()).subscribe(data => {
       this.patients = data;
   });
-  //   this.generalService.findAll().subscribe((response: Patient) => {
-  //     this.patient = response;
-  // });
   }
 
 }

@@ -5,6 +5,7 @@ import com.pharmapartners.medicomGo.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -19,10 +20,12 @@ public class PatientController {
     public List<Patient> getAllPatients(){return patientRepository.findAll();}
 
     @CrossOrigin
-    @GetMapping("/{id}")
-    public Patient findSpecificPatient(@PathVariable String id){
+    @GetMapping("/all/{id}")
+    public List<Patient> findSpecificPatient(@PathVariable String id){
+        List<Patient> patients = new ArrayList<>();
         int patientId = Integer.parseInt(id);
-        return patientRepository.findByPatientID(patientId);
+        patients.add(patientRepository.findByPatientID(patientId));
+        return patients;
     }
 
     @CrossOrigin

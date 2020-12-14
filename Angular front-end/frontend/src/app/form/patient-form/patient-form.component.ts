@@ -19,9 +19,9 @@ export class PatientFormComponent {
       this.patient = new Patient();
      }
 
- onSubmit(){
-   this.patientService.save(this.patient).subscribe(result => this.gotoPatientList());
- }
+//  onSubmit(){
+//    this.patientService.save(this.patient).subscribe(result => this.gotoPatientList());
+//  }
 
  gotoPatientList(){
    this.router.navigate(['/patients']);

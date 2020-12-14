@@ -7,7 +7,7 @@ import {Medicineprescription} from '../model/medicineprescription';
   providedIn: 'root'
 })
 export class MedicinePrescriptionService {
-  private medicineUrl = 'http://localhost:8080/prescription/';
+  private medicineUrl = 'http://localhost:8080/prescription/all/';
   private medicineUrl1 = 'http://localhost:8080/prescription/all/';
   constructor(private http:HttpClient) { }
 

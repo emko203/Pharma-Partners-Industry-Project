@@ -7,8 +7,8 @@ import { Allergies } from '../model/allergies';
   providedIn: 'root'
 })
 export class AllergiesService {
-  private allergiesUrl = 'http://localhost:8080/allergies/';
 
+  private allergiesUrl = 'http://localhost:8080/allergies/';
 
   constructor(private http: HttpClient) { }
 

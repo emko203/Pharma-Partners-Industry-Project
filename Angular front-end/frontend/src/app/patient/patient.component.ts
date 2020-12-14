@@ -13,7 +13,7 @@ import { LabResultsServiceService } from '../service/lab-results-service.service
 import { Notes } from '../model/notes';
 import { Medicineprescription } from '../model/medicineprescription';
 import { Allergies } from '../model/allergies';
-import { Patient } from '../model/patient';
+import { PatientInfo } from '../model/patientInfo';
 import { Diseases} from '../model/diseases';
 import { Vaccine} from '../model/Vaccine';
 import { LabResults } from '../model/lab-results';
@@ -30,8 +30,8 @@ export class PatientComponent implements OnInit {
   diseases: Diseases[];
   disease = new Diseases();
 
-  patients: Patient[];
-  patient = new Patient();
+  patients: PatientInfo[];
+  patient = new PatientInfo();
 
   labResults: LabResults[];
   labResult = new LabResults();
@@ -48,7 +48,7 @@ export class PatientComponent implements OnInit {
   private patientID: Number;
 
 
-  constructor(private generalService: GeneralInformationService, private diseasesService: DiseasesService,
+  constructor(private generalInformationService: GeneralInformationService, private diseasesService: DiseasesService,
     private vaccineService: VaccineServiceService, private allergiesService: AllergiesService,
     private medicineService: MedicinePrescriptionService,private LabResultsService: LabResultsServiceService,
     private noteservice: NotesService, public route: ActivatedRoute) { }
@@ -62,7 +62,7 @@ export class PatientComponent implements OnInit {
       }
     })
 
-    this.generalService.getAllPatients(this.patientID).pipe(first()).subscribe(data => {
+    this.generalInformationService.getAllPatients(this.patientID).pipe(first()).subscribe(data => {
       this.patients = data;
       console.log(data);
     });
