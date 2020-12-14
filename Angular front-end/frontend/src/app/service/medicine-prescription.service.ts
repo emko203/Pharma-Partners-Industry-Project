@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Medicineprescription} from '../model/medicineprescription';
-import { __core_private_testing_placeholder__ } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'

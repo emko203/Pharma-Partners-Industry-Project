@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl,FormGroup,Validators} from '@angular/forms';
 
 import { NotesService } from '../service/notes.service';
-import { first } from 'rxjs/operators';
 import {Notes} from '../model/notes';
+
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-notes',
@@ -12,16 +13,16 @@ import {Notes} from '../model/notes';
 })
 export class NotesComponent implements OnInit {
 
-notes:Notes[]=[];
-note : Notes=new Notes();
+notes: Notes[];
+note = new Notes();
 submitted = false;
 isupdated=false;
   constructor(private noteservice:NotesService) { }
 
   ngOnInit(): void {
-    this.submitted=false;
-    this.noteservice.getAllNotesperPatient().pipe(first()).subscribe(data => {
-      this.notes = data;});
+    this.noteservice.getAllNotes(null).pipe(first()).subscribe(data => {
+      this.notes = data;
+  });
   }
   notesaveform=new FormGroup({
     note_patient_id:new FormControl('' , [Validators.required , Validators.maxLength(5) ] ),
@@ -56,14 +57,14 @@ isupdated=false;
     this.submitted=false;
     this.notesaveform.reset();
   }
-  updateNotes(id: number){
-    this.noteservice.getNotes(id)
-      .subscribe(
-        data => {
-          this.notes=data
-        },
-        error => console.log(error));
-  }
+  // updateNotes(id: number){
+  //   this.noteservice.getNotes(id)
+  //     .subscribe(
+  //       data => {
+  //         this.notes=data
+  //       },
+  //       error => console.log(error));
+  // }
 
   notesupdateform=new FormGroup({
     note_patient_id:new FormControl(),
@@ -80,16 +81,16 @@ isupdated=false;
    console.log(this.NotesContent.value);
 
 
-   this.noteservice.updateNotes(this.note.notesID,this.note).subscribe(
-    data => {
-      this.isupdated=true;
-      this.noteservice.getAllNotesperPatient().subscribe(data =>{
-        this.notes =data
-        })
-    },
-    error => console.log(error));
-  }
-  changeisUpdate(){
-    this.isupdated=false;
+  //  this.noteservice.updateNotes(this.note.notesID,this.note).subscribe(
+  //   data => {
+  //     this.isupdated=true;
+  //     this.noteservice.getAllNotes(null).subscribe(data =>{
+  //       this.notes =data
+  //       })
+  //   },
+  //   error => console.log(error));
+  // }
+  // changeisUpdate(){
+  //   this.isupdated=false;
   }
 }

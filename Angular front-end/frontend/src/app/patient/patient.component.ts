@@ -8,6 +8,7 @@ import { NotesService } from '../service/notes.service';
 import { AllergiesService } from '../service/allergies.service';
 import { DiseasesService } from '../service/diseases.service';
 import { VaccineServiceService } from '../service/vaccine-service.service';
+import { LabResultsServiceService } from '../service/lab-results-service.service';
 
 import { Notes } from '../model/notes';
 import { Medicineprescription } from '../model/medicineprescription';
@@ -15,6 +16,7 @@ import { Allergies } from '../model/allergies';
 import { Patient } from '../model/patient';
 import { Diseases} from '../model/diseases';
 import { Vaccine} from '../model/Vaccine';
+import { LabResults } from '../model/lab-results';
 
 @Component({
   selector: 'app-patient',
@@ -31,6 +33,9 @@ export class PatientComponent implements OnInit {
   patients: Patient[];
   patient = new Patient();
 
+  labResults: LabResults[];
+  labResult = new LabResults();
+
   medicineprescriptions: Medicineprescription[];
   medicineprescription = new Medicineprescription();
 
@@ -43,7 +48,10 @@ export class PatientComponent implements OnInit {
   private patientID: Number;
 
 
-  constructor(private generalService: GeneralInformationService, private diseasesService: DiseasesService, private vaccineService: VaccineServiceService, private allergiesService: AllergiesService, private medicineService: MedicinePrescriptionService, private noteservice: NotesService, public route: ActivatedRoute) { }
+  constructor(private generalService: GeneralInformationService, private diseasesService: DiseasesService,
+    private vaccineService: VaccineServiceService, private allergiesService: AllergiesService,
+    private medicineService: MedicinePrescriptionService,private LabResultsService: LabResultsServiceService,
+    private noteservice: NotesService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -74,6 +82,11 @@ export class PatientComponent implements OnInit {
       console.log(data);
     });
 
+    this.LabResultsService.getAllLabResults(this.patientID).pipe(first()).subscribe(data => {
+      this.labResults = data;
+      console.log(data);
+    });
+
     this.medicineService.getAllMedicinePrescriptions(this.patientID).pipe(first()).subscribe(data => {
       this.medicineprescriptions = data;
       console.log(data);
@@ -81,7 +94,9 @@ export class PatientComponent implements OnInit {
 //     this.medicineService.getMedicinePrescriptionsperPatient().pipe(first()).subscribe(data => {
 //     this.medicineprescriptions = data;
 // });
-    this.noteservice.getAllNotesperPatient().subscribe(data => {this.notes = data; });
+this.noteservice.getAllNotes(this.patientID).pipe(first()).subscribe(data => {
+  this.notes = data;
+  console.log(data);
+});
   }
-
 }

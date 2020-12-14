@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { LabResults } from '../model/lab-results';
 import { Observable } from 'rxjs';
 
@@ -8,16 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class LabResultsServiceService {
 
-  private usersUrl: string;
+  private resultsUrl = 'http://localhost:8080/results/';
 
-  constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/results/all';
-   }
+  constructor(private http: HttpClient) { }
 
-   public findAll(): Observable<LabResults[]> {
-    return this.http.get<LabResults[]>(this.usersUrl);
-  }
-  public save(labResult: LabResults) {
-    return this.http.post<LabResults>(this.usersUrl, labResult);
+  getAllLabResults(id: Number):Observable<LabResults[]>{
+    if(id){
+      this.resultsUrl = this.resultsUrl+id;
+      console.log(this.resultsUrl);
+    }
+    return this.http.get<LabResults[]>(`${this.resultsUrl}`);
   }
 }
