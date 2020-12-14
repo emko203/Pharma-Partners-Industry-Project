@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import {Diseases} from '../model/diseases';
 import {DiseasesService} from '../service/diseases.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-diseases-list',
@@ -11,13 +11,13 @@ import {DiseasesService} from '../service/diseases.service';
 export class DiseasesListComponent implements OnInit {
 
   diseases: Diseases[];
+  disease = new Diseases();
 
   constructor(private diseasesService: DiseasesService) { }
 
   ngOnInit() {
-    this.diseasesService.findAll().subscribe(data => {
+    this.diseasesService.getAllDiseases(null).pipe(first()).subscribe(data => {
       this.diseases = data;
-    })
+  });
   }
-
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {GeneralInformationService} from '../service/general-information.service';
-import {ActivatedRoute, Router} from '@angular/router';
 import {Patient} from '../model/patient';
 import { first } from 'rxjs/operators';
 
@@ -11,16 +10,17 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./general-information.component.css']
 })
 export class GeneralInformationComponent implements OnInit {
-
-  patient: Patient;
-  constructor(private generalService: GeneralInformationService, private route: ActivatedRoute,
-              private router: Router) { }
+  patients:Patient[];
+  patient =new Patient();
+  constructor(private generalService: GeneralInformationService) { }
 
   ngOnInit(): void {
-
-    this.generalService.findAll().subscribe((response: Patient) => {
-      this.patient = response;
+    this.generalService.getAllPatients(null).pipe(first()).subscribe(data => {
+      this.patients = data;
   });
+  //   this.generalService.findAll().subscribe((response: Patient) => {
+  //     this.patient = response;
+  // });
   }
 
 }

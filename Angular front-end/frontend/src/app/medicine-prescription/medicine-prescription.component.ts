@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MedicinePrescriptionService } from '../service/medicine-prescription.service';
-import { first } from 'rxjs/operators';
 import {Medicineprescription} from '../model/medicineprescription';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-medicine-prescription',

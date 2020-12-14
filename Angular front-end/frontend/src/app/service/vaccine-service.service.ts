@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Vaccine } from '../model/Vaccine';
 import { Observable } from 'rxjs';
 
@@ -8,17 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class VaccineServiceService {
 
-  private vaccineUrl: string;
+  private vaccineUrl = 'http://localhost:8080/vaccine/all/';
 
-  constructor(private http: HttpClient) {
-    this.vaccineUrl = 'http://localhost:8080/vaccine/all/1';
-   }
+  constructor(private http: HttpClient) { }
 
-   public findAll(): Observable<Vaccine[]> {
-    return this.http.get<Vaccine[]>(this.vaccineUrl);
-  }
-
-  public save(vaccine: Vaccine) {
-    return this.http.post<Vaccine>(this.vaccineUrl, Vaccine);
+  getAllVaccines(id: Number):Observable<Vaccine[]>{
+    if(id){
+      this.vaccineUrl = this.vaccineUrl+id;
+      console.log(this.vaccineUrl);
+    }
+    return this.http.get<Vaccine[]>(`${this.vaccineUrl}`);
   }
 }
