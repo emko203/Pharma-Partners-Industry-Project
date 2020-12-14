@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {GeneralInformationService} from '../service/general-information.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Patient} from '../model/patient';
+import { first } from 'rxjs/operators';
 
 
 @Component({

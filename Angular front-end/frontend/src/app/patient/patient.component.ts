@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { MedicinePrescriptionService } from '../service/medicine-prescription.service';
 import { NotesService } from '../service/notes.service';
-import { LabResultsListComponent} from '../lab-results-list/lab-results-list.component';
-import { DiseasesListComponent } from '../diseases-list/diseases-list.component';
 import {Notes} from '../model/notes';
 import {Medicineprescription} from '../model/medicineprescription';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import {AllergiesService} from '../service/allergies.service';
+import { Allergies } from '../model/allergies';
 
 @Component({
   selector: 'app-patient',
@@ -16,12 +16,14 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class PatientComponent implements OnInit {
   medicineprescriptions: Medicineprescription[];
   medicineprescription = new Medicineprescription();
+  allergies: Allergies[];
+  allergie = new Allergies();
   notes: Notes[];
   note: Notes = new Notes();
   private patientID: Number;
 
 
-  constructor(private medicineService: MedicinePrescriptionService, private noteservice: NotesService, public route: ActivatedRoute) { }
+  constructor(private allergiesService: AllergiesService, private medicineService: MedicinePrescriptionService, private noteservice: NotesService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -31,7 +33,10 @@ export class PatientComponent implements OnInit {
         console.log(paramMap.get('id'));
       }
     })
-
+    this.allergiesService.getAllAllergies(this.patientID).pipe(first()).subscribe(data => {
+      this.allergies = data;
+      console.log(data);
+    })
 
     this.medicineService.getAllMedicinePrescriptions(this.patientID).pipe(first()).subscribe(data => {
       this.medicineprescriptions = data;

@@ -8,18 +8,16 @@ import {Allergies} from '../model/allergies';
   providedIn: 'root'
 })
 export class AllergiesService {
+  private allergiesUrl = 'http://localhost:8080/allergies/';
 
-  private allergiesUrl: string;
 
-  constructor(private http: HttpClient) {
-    this.allergiesUrl = 'http://localhost:8080/allergies/1';
-  }
+  constructor(private http: HttpClient) { }
 
-  public findAll(): Observable<Allergies[]> {
-    return this.http.get<Allergies[]>(this.allergiesUrl);
-  }
-
-  public save(allergies: Allergies) {
-    return this.http.post<Allergies>(this.allergiesUrl, allergies);
+  getAllAllergies(id: Number):Observable<Allergies[]>{
+    if(id){
+      this.allergiesUrl = this.allergiesUrl+id;
+      console.log(this.allergiesUrl);
+    }
+    return this.http.get<Allergies[]>(`${this.allergiesUrl}`);
   }
 }

@@ -64,7 +64,7 @@ import { GeneralInformationComponent } from './general-information/general-infor
             {path: 'patient/{name}', component: PatientComponent},
             {path: 'patients', component: PatientListComponent},
             {path: 'labResults', component: LabResultsListComponent},
-            {path: 'vaccine/{id}', component: VaccineListComponent},
+            {path: 'vaccine/:id', component: VaccineListComponent},
             {path: 'patient', component: GeneralInformationComponent}
         ]),
 

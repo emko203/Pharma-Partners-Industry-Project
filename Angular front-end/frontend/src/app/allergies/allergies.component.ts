@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AllergiesService} from '../service/allergies.service';
 import {Allergies} from '../model/allergies';
+import { first } from 'rxjs/operators';
 
 
 @Component({
@@ -9,14 +10,14 @@ import {Allergies} from '../model/allergies';
   styleUrls: ['./allergies.component.css']
 })
 export class AllergiesComponent implements OnInit {
-  allergies: Allergies[];
+  allergies:Allergies[];
+  allergie=new Allergies();
   constructor(private allergiesService: AllergiesService) {
   }
 
   ngOnInit() {
-    this.allergiesService.findAll().subscribe(data => {
+    this.allergiesService.getAllAllergies(null).pipe(first()).subscribe(data => {
       this.allergies = data;
-    });
+  });
   }
-
 }

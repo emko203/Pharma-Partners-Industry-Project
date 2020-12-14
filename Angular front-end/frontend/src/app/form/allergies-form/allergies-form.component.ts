@@ -19,9 +19,9 @@ export class AllergiesFormComponent implements OnInit {
     this.allergies = new Allergies();
   }
 
-  onSubmit() {
-    this.allergiesService.save(this.allergies).subscribe(result => this.gotoAllergiesList());
-  }
+  // onSubmit() {
+  //   this.allergiesService.save(this.allergies).subscribe(result => this.gotoAllergiesList());
+  // }
 
   gotoAllergiesList() {
     this.router.navigate(['/allergies']);
