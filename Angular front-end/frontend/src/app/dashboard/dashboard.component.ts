@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Appointments } from '../model/appointments';
 import { Patient } from '../model/patient';
+import { AppointmentsService } from '../service/appointments.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,10 +13,12 @@ import { Patient } from '../model/patient';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
-
+  constructor(private route: ActivatedRoute,private appointmentService:AppointmentsService) { }
+  appointments:Appointments[]=[];
   ngOnInit(): void {
+    this.appointmentService.findAll().subscribe(data=>{this.appointments=data});
   }
+
 
   date: Date = new Date();
 

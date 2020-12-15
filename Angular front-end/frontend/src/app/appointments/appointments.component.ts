@@ -19,6 +19,7 @@ export class AppointmentsComponent implements OnInit {
     this.appointmentsService.findAll().subscribe(data => {
       this.appointments = data;
     });
+   
   }
 
 }

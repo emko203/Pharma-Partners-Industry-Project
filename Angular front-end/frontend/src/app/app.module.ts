@@ -27,6 +27,8 @@ import {NotesComponent} from './notes/notes.component';
 import {MedicinePrescriptionComponent} from './medicine-prescription/medicine-prescription.component';
 import { GeneralInformationComponent } from './general-information/general-information.component';
 import { AuthInterceptor } from './service/auth-interceptor';
+import { PatientWithID1Component } from './patient-with-id1/patient-with-id1.component';
+import { AppointmentPatient1Component } from './appointment-patient1/appointment-patient1.component';
 
 
 
@@ -46,7 +48,9 @@ import { AuthInterceptor } from './service/auth-interceptor';
     AllergiesFormComponent,
     AppointmentsFormComponent,
     AppointmentsComponent,
-    GeneralInformationComponent
+    GeneralInformationComponent,
+    PatientWithID1Component,
+    AppointmentPatient1Component
   ],
     imports: [
         BrowserModule,
