@@ -12,7 +12,24 @@
               </button>
 
           </div>
-          <app-appointment-patient1></app-appointment-patient1>
+        <div  *ngFor="let appointment of appointments">
+          <div class="row mb-3">
+              <div class="col-xl-3 col-sm-6 py-2">
+                  <div  class="card bg-success text-white h-100">
+                      <div class="card-body bg-success">
+                          <div class="rotate">
+                              <i class="fa fa-user fa-4x"></i>
+                          </div>
+                          <h6 class="text-uppercase">Patient Name:</h6>
+                          <a href="patients/{{appointment.patientID}}">
+                            <h1 class="display-4">{{searchPatientbyID(appointment.patientID)}}</h1>
+                          </a>
+                          <h6 class="text-uppercase"> {{appointment.appointmentDate}} </h6>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
           <!--/row-->
           <!--/row-->
           <!--/row-->

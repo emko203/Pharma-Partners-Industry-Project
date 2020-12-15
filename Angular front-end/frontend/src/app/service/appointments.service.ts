@@ -20,7 +20,7 @@ export class AppointmentsService {
     return this.http.get<Appointments[]>(this.appointmentUrl);
   }
   public findAppointmentwithId1(id: Number):Observable<Appointments[]>{
-    id=1;
+
     if(id){
       this.appointmentUrl1 = this.appointmentUrl1+id;
       console.log(this.appointmentUrl1);

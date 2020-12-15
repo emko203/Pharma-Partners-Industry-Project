@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { first, switchMap } from 'rxjs/operators';
 import { Appointments } from '../model/appointments';
 import { Patient } from '../model/patient';
 import { AppointmentsService } from '../service/appointments.service';
+import { PatientServiceService } from '../service/patient-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,14 +13,36 @@ import { AppointmentsService } from '../service/appointments.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute,private appointmentService:AppointmentsService) { }
+  private patientID: Number;
+ limit:boolean=false;
+  patients:Patient[];
+  constructor(private route: ActivatedRoute,private appointmentService:AppointmentsService,private patientService:PatientServiceService) { }
   appointments:Appointments[]=[];
   ngOnInit(): void {
-    this.appointmentService.findAll().subscribe(data=>{this.appointments=data});
+    this.loadAppointments();
+    this.loadPatients();
+
   }
-
-
+ loadAppointments()
+  {
+    this.appointmentService.findAll().subscribe(data => {
+      this.appointments = data;
+    });
+  }
+loadPatients()
+{
+  this.patientService.findPatients().pipe(first()).subscribe(data => {
+    this.patients = data;
+    this.limit=true;
+  });
+}
+searchPatientbyID(patientID:string)
+{ if(this.limit)
+  {
+let  patient:Patient=this.patients.find(x=>x.patientID===patientID);
+return patient.firstName+" "+patient.lastName;
+  }
+}
   date: Date = new Date();
 
   visitSaleChartData = [{
