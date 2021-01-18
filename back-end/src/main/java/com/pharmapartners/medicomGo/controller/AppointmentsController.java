@@ -2,6 +2,7 @@ package com.pharmapartners.medicomGo.controller;
 
 import com.pharmapartners.medicomGo.model.Appointments;
 import com.pharmapartners.medicomGo.repository.AppointmentsRepository;
+import com.pharmapartners.medicomGo.service.AppointmentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,20 +17,16 @@ import java.util.List;
 public class AppointmentsController {
 
     @Autowired
-    AppointmentsRepository appointmentsRepository;
+    AppointmentsService appointmentsService;
 
     @CrossOrigin
     @GetMapping("/all")
     public List<Appointments> getAllAppointments(){
-        return appointmentsRepository.findAll();
+        return appointmentsService.getAllAppointments();
     }
     @CrossOrigin
     @GetMapping("/patient/{id}")
     public List<Appointments> getAllAppointmentsForSpecificPatient(@PathVariable String id){
-        int patientID= Integer.parseInt(id);
-        return appointmentsRepository.findAllByPatientID(patientID);
+        return appointmentsService.getAllAppointmentsForSpecificPatient(id);
     }
-
-
-
 }
