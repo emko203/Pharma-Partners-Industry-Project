@@ -28,20 +28,6 @@ isupdated=false;
     note_patient_id:new FormControl('' , [Validators.required , Validators.maxLength(5) ] ),
     note_branch:new FormControl()
   });
-
-  saveNote(saveNote){
-    this.note=new Notes();
-    this.note.notesID=this.NotesId.value;
-    this.note.notesContent=this.NotesContent.value;
-    this.note.patientID=this.PatientId.value;
-    this.submitted = true;
-    this.add();
-  }
-  add() {
-    this.noteservice.addNotes(this.note.patientID,this.note)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.note = new Notes();
-  }
   get NotesId(){
     return this.notesaveform.get('notesID');
   }
@@ -57,14 +43,6 @@ isupdated=false;
     this.submitted=false;
     this.notesaveform.reset();
   }
-  // updateNotes(id: number){
-  //   this.noteservice.getNotes(id)
-  //     .subscribe(
-  //       data => {
-  //         this.notes=data
-  //       },
-  //       error => console.log(error));
-  // }
 
   notesupdateform=new FormGroup({
     note_patient_id:new FormControl(),
@@ -79,18 +57,5 @@ isupdated=false;
     this.note.notesContent=this.NotesContent.value;
     this.note.patientID=this.PatientId.value;
    console.log(this.NotesContent.value);
-
-
-  //  this.noteservice.updateNotes(this.note.notesID,this.note).subscribe(
-  //   data => {
-  //     this.isupdated=true;
-  //     this.noteservice.getAllNotes(null).subscribe(data =>{
-  //       this.notes =data
-  //       })
-  //   },
-  //   error => console.log(error));
-  // }
-  // changeisUpdate(){
-  //   this.isupdated=false;
   }
 }

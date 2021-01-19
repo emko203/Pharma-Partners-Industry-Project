@@ -10,13 +10,13 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./general-information.component.css']
 })
 export class GeneralInformationComponent implements OnInit {
-  patients: PatientInfo[];
+  patients: PatientInfo;
   patient = new PatientInfo();
 
   constructor(private generalInformationService: GeneralInformationService) {}
 
   ngOnInit() {
-    this.generalInformationService.getAllPatients(null).pipe(first()).subscribe(data => {
+    this.generalInformationService.getAllPatients(null).pipe(first()).subscribe((data:PatientInfo) => {
       this.patients = data;
   });
   }

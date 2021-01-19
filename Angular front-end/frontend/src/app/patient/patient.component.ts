@@ -32,6 +32,7 @@ export class PatientComponent implements OnInit {
 
   patients: PatientInfo[];
   patient = new PatientInfo();
+  patientInfoDisplay:PatientInfo;
 
   labResults: LabResults[];
   labResult = new LabResults();
@@ -45,7 +46,7 @@ export class PatientComponent implements OnInit {
   notes: Notes[];
   note: Notes = new Notes();
 
-  private patientID: Number;
+  private patientID: number;
 
 
   constructor(private generalInformationService: GeneralInformationService, private diseasesService: DiseasesService,
@@ -58,45 +59,57 @@ export class PatientComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap: ParamMap) =>{
       if(paramMap.has('id')){
         this.patientID =Number( paramMap.get('id'));
-        console.log(paramMap.get('id'));
+
       }
     })
 
-    this.generalInformationService.getAllPatients(this.patientID).pipe(first()).subscribe(data => {
-      this.patients = data;
-      console.log(data);
+    this.generalInformationService.getAllPatients(this.patientID).pipe(first()).subscribe((data:PatientInfo) => {
+      this.patientInfoDisplay = data;
+
     });
 
     this.diseasesService.getAllDiseases(this.patientID).pipe(first()).subscribe(data => {
       this.diseases = data;
-      console.log(data);
+
     });
 
     this.vaccineService.getAllVaccines(this.patientID).pipe(first()).subscribe(data => {
       this.vaccines = data;
-      console.log(data);
+
     });
 
     this.allergiesService.getAllAllergies(this.patientID).pipe(first()).subscribe(data => {
       this.allergies = data;
-      console.log(data);
+
     });
 
     this.LabResultsService.getAllLabResults(this.patientID).pipe(first()).subscribe(data => {
       this.labResults = data;
-      console.log(data);
+
     });
 
     this.medicineService.getAllMedicinePrescriptions(this.patientID).pipe(first()).subscribe(data => {
       this.medicineprescriptions = data;
-      console.log(data);
+
   });
-//     this.medicineService.getMedicinePrescriptionsperPatient().pipe(first()).subscribe(data => {
-//     this.medicineprescriptions = data;
-// });
-this.noteservice.getAllNotes(this.patientID).pipe(first()).subscribe(data => {
-  this.notes = data;
-  console.log(data);
-});
+
+  this.noteservice.getAllNotes(this.patientID).subscribe((list:Notes[])=>{
+    this.notes=list;
+
+  });
+  }
+  
+  createNote(notesContentText:string) {
+    if(notesContentText==null||notesContentText==""||notesContentText==" "){
+
+    }
+    else{
+      this.noteservice.addNotes(notesContentText,this.patientID)
+      .subscribe((data:Notes) => {
+        this.notes.push({notesID:data.notesID,notesContent:notesContentText,patientID:this.patientID})
+      });
+      
+    
+    }
   }
 }

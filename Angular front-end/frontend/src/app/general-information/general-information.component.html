@@ -14,14 +14,14 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let patient of patients" >
-        <td>{{ patient.patientID }}</td>
-        <td>{{ patient.firstName }}</td>
-        <td>{{ patient.lastName }}</td>
-        <td>{{ patient.age }}</td>
-        <td>{{ patient.address}}</td>
-        <td>{{ patient.contact}}</td>
-        <td>{{ patient.emergencyContact}}</td>
+      <tr >
+        <td>{{ patients?.patientID }}</td>
+        <td>{{ patients?.firstName }}</td>
+        <td>{{ patients?.lastName }}</td>
+        <td>{{ patients?.age }}</td>
+        <td>{{ patients?.address}}</td>
+        <td>{{ patients?.contact}}</td>
+        <td>{{ patients?.emergencyContact}}</td>
       </tr>
       </tbody>
     </table>

@@ -27,7 +27,26 @@
     </app-accordion-item>
 
     <app-accordion-item title="Notes: ">
-     <app-notes></app-notes>
+      <div class="notesBox">
+        <div class="notesTable">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Notes Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let note of notes">
+            <td>{{note.notesContent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rearangeTextArea">
+     <textarea #NotesContent class="notesInput" type="text" rows="3"></textarea>
+     <button class="createNote" (click)="createNote(NotesContent.value)">Add note to patient</button>
+    </div>
+    </div>
     </app-accordion-item>
   </app-accordion>
 </div>

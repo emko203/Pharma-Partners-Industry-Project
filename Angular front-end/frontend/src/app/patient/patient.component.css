@@ -1,0 +1,27 @@
+.notesBox{
+    display: flex;
+    flex-direction: column;
+    padding:1%;
+}
+.notesTable{
+    padding-right: 2%;
+}
+.rearangeTextArea{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    min-width: 600px;
+}
+.notesInput{
+    height: 70%;
+    padding-bottom: 2%;
+}
+.createNote{
+    margin-top: 2%;
+    height: 20%;
+    background-color: #007bff;
+    color:white;
+    border: 1px solid white;
+    border-radius: 5px;
+}

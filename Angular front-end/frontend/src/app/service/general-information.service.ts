@@ -8,16 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class GeneralInformationService {
 
-  private patientUrl = 'http://localhost:8080/patients/all/';
+  private patientUrl = 'http://localhost:8080/patients/';
 
   constructor(private http: HttpClient) { }
 
-   getAllPatients(id: Number):Observable<PatientInfo[]>{
+   getAllPatients(id: Number){
     if(id){
       this.patientUrl = this.patientUrl+id;
       console.log(this.patientUrl);
     }
-    return this.http.get<PatientInfo[]>(`${this.patientUrl}`);
+    return this.http.get(`${this.patientUrl}`);
   }
 
 }
