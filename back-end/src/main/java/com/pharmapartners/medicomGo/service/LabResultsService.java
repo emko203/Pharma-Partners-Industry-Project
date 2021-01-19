@@ -12,6 +12,7 @@ public class LabResultsService {
     @Autowired
     LabResultsRepository labResultsRepository;
 
-    public List<LabResults> getAllLabResults(){return labResultsRepository.findAll();}
+    public List<LabResults> getAllLabResults()
+    {return labResultsRepository.findAll();}
 
 }

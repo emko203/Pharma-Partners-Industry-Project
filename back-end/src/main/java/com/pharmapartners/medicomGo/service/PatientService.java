@@ -13,7 +13,8 @@ public class PatientService {
     @Autowired
     PatientRepository patientRepository;
 
-    public List<Patient> getAllPatients(){return patientRepository.findAll();}
+    public List<Patient> getAllPatients()
+    {return patientRepository.findAll();}
 
     public Patient findSpecificPatient(String id){
         int patientId = Integer.parseInt(id);
