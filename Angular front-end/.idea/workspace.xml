@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0a2112c1-49bb-46d6-8d5c-c99c0ae7342f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c5e10461237728c89e5efbc24fd95b48d2ead949" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c5e10461237728c89e5efbc24fd95b48d2ead949" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/debug.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kSdQEo8Ce9bsL67tXWy7He0etC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\wonda\Documents\CBO4-6\cb-06-new-group-4\Angular front-end\frontend\node_modules\typescript\lib" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a2112c1-49bb-46d6-8d5c-c99c0ae7342f" name="Default Changelist" comment="" />
+      <created>1605697910516</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605697910516</updated>
+      <workItem from="1605697911775" duration="15362000" />
+      <workItem from="1605865597795" duration="1970000" />
+      <workItem from="1605983140445" duration="131000" />
+      <workItem from="1605992179255" duration="1088000" />
+      <workItem from="1606229895285" duration="537000" />
+      <workItem from="1606230990128" duration="1152000" />
+      <workItem from="1606232244458" duration="1747000" />
+      <workItem from="1606984334147" duration="5903000" />
+      <workItem from="1606992231804" duration="4194000" />
+      <workItem from="1606997181642" duration="1376000" />
+      <workItem from="1606998583493" duration="1017000" />
+      <workItem from="1606999927205" duration="2816000" />
+      <workItem from="1607013198490" duration="69000" />
+      <workItem from="1607625499780" duration="12981000" />
+      <workItem from="1607691268846" duration="1348000" />
+      <workItem from="1607698183907" duration="1920000" />
+      <workItem from="1609874580192" duration="655000" />
+      <workItem from="1610220802329" duration="69000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607661956297">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1607661956297" />
+    <state x="855" y="217" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605698650842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="855" y="217" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1605698650842" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1607001287170">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1607001287170" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607000582144">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1607000582144" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1606998563450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606998563450" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1606998563450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606998563450" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1606998563450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606998563450" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1606998563450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606998563450" />
+  </component>
+</project>

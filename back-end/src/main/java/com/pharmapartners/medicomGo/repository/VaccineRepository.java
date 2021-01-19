@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface VaccineRepository extends JpaRepository<Vaccine,Integer> {
+
     List<Vaccine> findAllByPatientID(int patientID);
 }

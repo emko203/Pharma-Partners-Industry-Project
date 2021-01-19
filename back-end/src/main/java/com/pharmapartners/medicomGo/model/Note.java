@@ -9,7 +9,6 @@ public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int notesID;
-
     private String notesContent;
 
     @Column(name="patientID")

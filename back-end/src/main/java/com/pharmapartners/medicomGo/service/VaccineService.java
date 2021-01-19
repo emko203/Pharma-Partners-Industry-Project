@@ -14,7 +14,10 @@ public class VaccineService {
     VaccineRepository vaccineRepository;
 
     public List<Vaccine> getAllVaccinesForPatientWithID(String id){
-        int patientID=Integer.parseInt(id);
+        int patientID = Integer.parseInt(id);
         return vaccineRepository.findAllByPatientID(patientID);
     }
+
+
+
 }

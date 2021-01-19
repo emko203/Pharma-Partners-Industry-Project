@@ -20,4 +20,6 @@ public class AppointmentsService {
         int patientID= Integer.parseInt(id);
         return appointmentsRepository.findAllByPatientID(patientID);
     }
+
+
 }

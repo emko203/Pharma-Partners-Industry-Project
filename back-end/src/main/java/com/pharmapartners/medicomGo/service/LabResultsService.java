@@ -12,10 +12,12 @@ public class LabResultsService {
     @Autowired
     LabResultsRepository labResultsRepository;
 
+
     public List<LabResults> getAllLabResults(String id){
         int patientId = Integer.parseInt(id);
         return labResultsRepository.findAllByPatientID(patientId);
 
     }
+
 
 }
