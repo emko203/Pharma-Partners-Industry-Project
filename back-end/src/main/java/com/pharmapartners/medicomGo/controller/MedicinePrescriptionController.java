@@ -2,6 +2,7 @@ package com.pharmapartners.medicomGo.controller;
 
 import com.pharmapartners.medicomGo.model.MedicinePrescription;
 import com.pharmapartners.medicomGo.repository.MedicinePrescriptionRepository;
+import com.pharmapartners.medicomGo.service.MedicinePrescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,18 +12,16 @@ import java.util.List;
 @RequestMapping("prescription")
 public class MedicinePrescriptionController {
     @Autowired
-    MedicinePrescriptionRepository medicinePrescriptionRepository;
+    MedicinePrescriptionService medicinePrescriptionService;
 
     @CrossOrigin
     @GetMapping("/all/{id}")
     public List<MedicinePrescription> findMedicinePrescriptionsForPatientWithID(@PathVariable String id){
-        int patientId = Integer.parseInt(id);
-        return medicinePrescriptionRepository.findAllByPatientID(patientId);
+        return medicinePrescriptionService.findMedicinePrescriptionsForPatientWithID(id);
     }
     @CrossOrigin
     @GetMapping("/{id}")
     public MedicinePrescription findMedicinePrescriptionWithID(@PathVariable String id){
-        int patientId = Integer.parseInt(id);
-        return medicinePrescriptionRepository.findByPrescriptionID(patientId);
+        return medicinePrescriptionService.findMedicinePrescriptionWithID(id);
     }
 }

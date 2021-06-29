@@ -2,6 +2,7 @@ package com.pharmapartners.medicomGo.controller;
 
 import com.pharmapartners.medicomGo.model.LabResults;
 import com.pharmapartners.medicomGo.repository.LabResultsRepository;
+import com.pharmapartners.medicomGo.service.LabResultsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,9 +16,9 @@ import java.util.List;
 public class LabResultsController {
 
     @Autowired
-    LabResultsRepository labResultsRepository;
+    LabResultsService labResultsService;
 
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET,path="/all")
-    public List<LabResults> getAllLabResults(){return labResultsRepository.findAll();}
+    public List<LabResults> getAllLabResults(){return labResultsService.getAllLabResults();}
 }
